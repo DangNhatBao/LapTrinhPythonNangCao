@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.container2 {
+    max-width: 600px;
+    height: 310px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 220px;
+    margin-right: 650px;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #5d74c7;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2f49aa;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.logout-button {
+    display: inline-block;
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.logout-button:hover {
+    background-color: #ff1b1b;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.flashes li {
+    padding: 10px;
+    background-color: #eaf8e5;
+    border: 1px solid #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-row label {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.form-row input[type="text"], .form-row input[type="number"] {
+    width: 170px;
+    margin: 0;
+}
+
+.form-row button {
+    margin-left: 10px;
+    padding: 10px 15px;
+}
+.form-row button.Add-student {
+    margin-top: 17px;
+}
+.form-row input[type="text"].Search_student, .form-row input[type="number"].Search_student{
+    width: 600px;
+}
+.form-login input[type="text"], .form-login input[type="password"]{
+    width: 575px;
+}
