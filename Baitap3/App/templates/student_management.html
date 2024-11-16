@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Sinh Viên</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>QUẢN LÝ SINH VIÊN</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <h3>Thêm sinh viên</h3>
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="mssv">MSSV:</label>
+                    <input type="text" id="mssv" name="mssv" required>
+                </div>
+                <div class="input-group">
+                    <label for="hoten">Họ tên:</label>
+                    <input type="text" id="hoten" name="hoten" required>
+                </div>
+                <div class="input-group">
+                    <label for="nganh">Ngành:</label>
+                    <input type="text" id="nganh" name="nganh" required>
+                </div>
+                <div class="input-group">
+                    <label for="namsinh">Năm sinh:</label>
+                    <input type="number" id="namsinh" name="namsinh" required>
+                </div>
+                <button class = "Add-student" type="submit" name="add_student">Thêm sinh viên</button>
+            </div>
+        </form>
+
+        <h3>Tìm kiếm sinh viên</h3>
+        <form method="POST">
+            <div class="form-row search-row">
+                <label for="search_value">Nhập thông tin cần tìm:</label>
+                <input class = "Search_student" type="text" id="search_value" name="search_value" required>
+                <button type="submit" name="search_student">Tìm kiếm</button>
+            </div>
+        </form>
+
+        <h3>Danh sách sinh viên</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mssv</th>
+                    <th>Họ tên</th>
+                    <th>Ngành</th>
+                    <th>Năm sinh</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student[0] }}</td>
+                    <td>{{ student[1] }}</td>
+                    <td>{{ student[2] }}</td>
+                    <td>{{ student[3] }}</td>
+                    <td>
+                        <form method="POST" style="display:inline;">
+                            <input type="hidden" name="mssv" value="{{ student[0] }}">
+                            <button type="submit" name="delete_student" class="delete-button" onclick="return confirm('Bạn có chắc chắn muốn xóa sinh viên này?');">Xóa</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/logout" class="logout-button">Đăng xuất</a>
+    </div>
+</body>
+</html>
